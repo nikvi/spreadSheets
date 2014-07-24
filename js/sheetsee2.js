@@ -1,3 +1,7 @@
+/* Version 2 : Added sortNumeric method.
+  See  http://jlord.github.io/sheetsee.js/ for original file
+*/
+
 ;
 (function e(t,n,r){
 	function s(o,u){
@@ -1642,7 +1646,11 @@ function sortThings(opts, sorter, sorted, tableDiv) {
   $(header).attr("data-sorted", sorted)
 }
 
-
+/*  Added function to sort data as number even if percentage string data is provided
+    @author : Nikki
+   sortThings sorts data as string
+    Method converts data into appropriate format and sorts the data
+*/
 function sortNumeric(opts, sorter, sorted, tableDiv){
 
  if (opts.tableDiv != tableDiv) return
