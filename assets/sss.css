@@ -21,9 +21,5 @@ td, text {padding: 3px 20px 3px 0px; font-size: 14px;}
 path.chartLine {stroke: #333; stroke-width: 3; fill: none;}
 div.tooltip {position: absolute; text-align: left; padding: 4px 8px; width: auto; font-size: 10px; height: auto; background: #fff; border: 0px; pointer-events: none;}
 circle {fill: #e6e6e6;}
-/*  Centering and sorting*/
-.tHeader {padding: 8px; font-family: Helvetica Neue,  Arial, sans-serif; cursor: hand;}
-.tNoSort {padding: 8px; font-family: Helvetica Neue,  Arial, sans-serif; }
-.photo {display: inline-block; float: left; width: 50px; height : 50px; border:0px}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 320px) and (max-width: 1024px) {}

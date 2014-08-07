@@ -4,24 +4,28 @@
     <title>Sample Demo</title>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
     <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>
-   <script src="http://d3js.org/d3.v3.min.js"></script>
     <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic'>
-    <script type='text/javascript' src='../spreadsheet/js/tabletop.js'></script>
-		<script type='text/javascript' src='../spreadsheet/js/spread.js'></script>
-    <script type='text/javascript' src='../spreadsheet/js/sheetsee2.js'></script>
-
-    <link rel='stylesheet' type='text/css' href='../spreadsheet/assets/style.css'>
-    <link rel="stylesheet" type="text/css" href="../spreadsheet/assets/sss.css">
+    <script type='text/javascript' src='../spreadSheets/js/tabletop.js'></script>
+    <script type='text/javascript' src='../spreadSheets/js/sheetsee2.js'></script>
+    <link rel='stylesheet' type='text/css' href='../spreadSheets/assets/style.css'>
+    <link rel="stylesheet" type="text/css" href="../spreadSheets/assets/sss.css">
   </head>
+    <style>
+	 #Pagination {border-top: 1px solid #efefef; margin: 10px 0px; padding-top: 10px; display: inline-block;}
+     #Pagination a {cursor: hand;}
+    .tHeader {padding: 8px; font-family: Helvetica Neue,  Arial, sans-serif; cursor: hand;}
+	.tNoSort {padding: 8px; font-family: Helvetica Neue,  Arial, sans-serif; }
+    .photo {display: inline-block; float: left; width: 50px; height : 50px;}
+	#accessRating {width : 75%; position: absolute ; top: 0; bottom: 0; left: 0; right: 0; margin: auto;}
+  </style>
   <body>
   <div id="container">
    <input id="accessRatingFilter" type="text" placeholder="filter by.."></input>
    <div id="accessRating"></div>
-   <div id="summary"></id>
   </div>
 
   <script id="accessRating" type="text/html">
-   <table>
+     <table>
     <tr><th class="tHeader">Site</th><th class="tNoSort">Report</th><th class="tHeader">Pages Checked</th><th class="tHeader">Inaccessible Pages</th><th class="tHeader">Percentage Accessible</th><th class="tHeader">Issues</th><th class="tHeader">Date</th><th class="tNoSort">Rating</th></tr>
       {{#rows}}
         <tr><td><a href="{{siteurl}}">{{site}}</a></td><td><a href="{{reporturl}}">Report</a></td><td>{{pageschecked}}</td><td>{{inaccessiblepages}}</td><td>{{percentageaccessible}}</td><td>{{issues}}</td><td>{{validationdate}}</td><td>
@@ -29,24 +33,19 @@
       {{/rows}}
   </table>
   </script>
-  
-  <script id="summary" type="text/html"> 
-      <h5> Summary: Total number of pages</h5>
-  </script>
-  
 
   <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function() {
-        var URL = "1ZpoAo3i6EYHHdqkVzBpUaBJRTJYRIpqwOBN31zWB09Q"
+        var URL = "1RSzZbFmZUHRTToZjaelN03zDEC1fWFfkl8b3rvBwuIA"
         Tabletop.init( { key: URL, callback: myData, simpleSheet: true } )
     })
     function myData(data) {
     var tableOptions = {"data": data
-    , "pagination": 1000, "tableDiv": "#accessRating", "filterDiv": "#accessRatingFilter"}
+    , "pagination": 50, "tableDiv": "#accessRating", "filterDiv": "#accessRatingFilter"}
     Sheetsee.makeTable(tableOptions)
     Sheetsee.initiateTableFilter(tableOptions)
     var rating = Sheetsee.getKeyword(data, "Accessiblity")
-	//var totalSum = 
+
     }
   </script>
   </body>

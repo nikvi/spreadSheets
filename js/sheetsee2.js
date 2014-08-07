@@ -1629,8 +1629,8 @@ function searchTable(opts, searchTerm) {
     makeTable(opts, filteredList)
   }
 }
-module.exports.sortThings = sortNumeric
-function sortThings(opts, sorter, sorted, tableDiv) {
+module.exports.sortThings = sortThings
+function sortNumeric(opts, sorter, sorted, tableDiv) {
   if (opts.tableDiv != tableDiv) return
   opts.data.sort(function(a,b){
     if (a[sorter]<b[sorter]) return -1
@@ -1651,7 +1651,7 @@ function sortThings(opts, sorter, sorted, tableDiv) {
    sortThings sorts data as string
     Method converts data into appropriate format and sorts the data
 */
-function sortNumeric(opts, sorter, sorted, tableDiv){
+function sortThings(opts, sorter, sorted, tableDiv){
 
  if (opts.tableDiv != tableDiv) return
   opts.data.sort(function(a,b){
