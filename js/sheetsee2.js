@@ -1746,14 +1746,14 @@ function setPagClicks(data, tableId, currentPage, pagination, totalPages) {
 
     if (currentPage >= totalPages) {
       currentRows = data.slice(currentStart, currentEnd)
-      table(currentRows, "#" + tableId)
+      table(currentRows, {'tableDiv' : "#" + tableId})
       setPreNext("#" + tableId, currentPage, currentPage, totalPages)
       $(".pagination-next-" + tableId).addClass("no-pag")
       $(".pagination-next-" + tableId)
     }
     else {
       currentRows = data.slice(currentStart, currentEnd)
-      table(currentRows, "#" + tableId)
+      table(currentRows, {'tableDiv' :"#" + tableId})
       setPreNext("#" + tableId, currentPage, currentPage, totalPages)
     }
 })
@@ -1777,13 +1777,13 @@ function setPagClicks(data, tableId, currentPage, pagination, totalPages) {
 
     if (currentPage === 1) {
       currentRows = data.slice(currentStart, currentEnd)
-      table(currentRows, "#" + tableId)
+      table(currentRows, {'tableDiv' :"#" + tableId})
       setPreNext("#" + tableId, currentPage, currentPage, totalPages)
       $(".pagination-pre-" + tableId).addClass("no-pag")
     }
     else {
       currentRows = data.slice(currentStart, currentEnd)
-      table(currentRows, "#" + tableId)
+      table(currentRows, {'tableDiv' :"#" + tableId})
       setPreNext("#" + tableId, currentPage, currentPage, totalPages)
     }
     
